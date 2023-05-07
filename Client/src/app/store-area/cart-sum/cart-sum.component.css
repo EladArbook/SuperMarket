@@ -1,0 +1,99 @@
+#cartSum {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    /* align-items: flex-start; */
+    /* flex: 1; */
+}
+
+#sumDiv {
+    justify-self: flex-end;
+    /* align-self: flex-end; */
+    /* height: 20px; */
+}
+
+#cartItems>li {
+    list-style-type: circle;
+    position: relative;
+}
+
+#cartItems>li:hover {
+    list-style-type: disc;
+}
+
+#cartItems>li:hover .closeBtn {
+    display: block;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.closeBtn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.minimizeBtn {
+    background-color: transparent;
+    border: 0;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.minimizeBtn:hover {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#totalPrice {
+    float: left;
+}
+
+#orderBtn {
+    float: right;
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    font-size: 100%;
+}
+
+#orderBtn:hover {
+    color: blue;
+}
+
+#deleteAllBtn {
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    font-size: 60%;
+}
+
+#deleteAllBtn:hover {
+    color: red;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+.imgDiv {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}

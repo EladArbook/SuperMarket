@@ -1,0 +1,142 @@
+#orderPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+    height: 100%;
+}
+
+#orderPage>div {
+    min-width: 220px;
+    margin: 15px;
+    padding: 20px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#cartSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.orderDetails {
+    padding: 20px;
+}
+
+#cartProducts>li {
+    list-style-type: circle;
+    position: relative;
+}
+
+#cartProducts>li:hover {
+    list-style-type: disc;
+}
+
+#backToShop {
+    float: right;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    font-size: 100%;
+}
+
+#backToShop:hover {
+    color: blue;
+}
+
+#cartSpan {
+    float: left;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+td {
+    max-width: 150px;
+    padding: 5px;
+}
+
+input {
+    max-width: 110px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#orderBtn {
+    background-color: black;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 110%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+}
+
+#orderBtn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.errorTd {
+    color: rgb(0, 0, 0);
+    font-size: 70%;
+}
+
+.orderDetails ::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#orderMade {
+    width: 50%;
+    height: 40%;
+    background-color: rgb(130, 170, 255);
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid gray;
+    overflow: auto;;
+}
+
+#orderMade button {
+    background-color: black;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 110%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+    /* background-color: black;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 110%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.searchedWord{
+    background-color: yellow;
+}
+
+#reciptBtn{
+    color: blue;
+    cursor: pointer;
+}
+
+#reciptBtn:hover{
+color: blueviolet;
+}

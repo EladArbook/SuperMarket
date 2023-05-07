@@ -1,0 +1,15 @@
+.layout {
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 17% 78% 5%;
+    /* background-color: rgb(171, 231, 131); */
+    background-color: rgb(230, 230, 196);
+    min-width: 650px;
+}
+
+.layout, .layout>* {
+    border: 2px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}

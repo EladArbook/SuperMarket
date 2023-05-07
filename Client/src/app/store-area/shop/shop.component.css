@@ -1,0 +1,47 @@
+#shopDiv {
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    overflow: hidden;
+    height: 100%;
+}
+
+#firstDiv {
+    min-width: 25px;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    /* position: relative; */
+}
+
+#secondDiv {
+    /* min-width: 120px; */
+    margin: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*     position: relative; */
+}
+
+.firstExtended {
+    /* before change */
+    grid-column: span 6;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.secondMinimized {
+    /* before change */
+    grid-column: span 15;
+}
+
+.firstMinimized {
+    grid-column: span 1;
+    overflow: hidden;
+    height: 25px
+}
+
+.secondExtended {
+    grid-column: span 20;
+}

@@ -1,0 +1,77 @@
+.authDiv {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    overflow: hidden;
+    height: 100%;
+}
+
+.authDiv>div {
+    grid-column: span 2;
+    min-width: 120px;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow: auto;
+    position: relative;
+}
+
+.authDiv>div>* {
+    overflow: hidden;
+}
+
+.authDiv>div:hover {
+    background-color: rgb(163, 192, 255);
+
+/*     background-color: rgb(206, 87, 220); */
+}
+
+#toCartBtn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 80%;
+    height: 10%;
+    background-color: rgb(164, 225, 159);
+}
+
+#toCartBtn:hover {
+    background-color: rgb(142, 200, 140);
+}
+
+#toCartBtn:active {
+    background-color: rgb(0, 255, 255);
+}
+
+input {
+    max-width: 90%;
+}
+
+.errorSpan {
+    font-size: 80%;
+    font-weight: bold;
+}
+
+li {
+    line-height: 25px;
+}
+
+#vegImgDiv{
+text-align: center;
+}
+
+.bottomArea {
+    position: absolute;
+    bottom: 15px;
+}
+
+#loginBtn {
+    background-color: transparent;
+    border: 1px solid purple;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#logOutBtn {
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,91 @@
+<div id="orderPage" *ngIf="!orderSuccess">
+
+    <div id="cartSummary">
+
+        <div>
+            <span id="cartSpan">My cart</span>
+            <span id="backToShop" (click)="backToShop()">Back&nbsp;to&nbsp;shop</span>
+            <br>
+            <hr>
+        </div>
+
+
+        <ul id="cartProducts" *ngFor="let product of cartProducts">
+            <li>
+                <span
+                    [ngClass]="{searchedWord: searchWord && product.name.toLowerCase().includes(searchWord)}">{{product.name}}</span>
+                x {{product.amount}}
+                <br>
+                Total = {{product.total_price | number:'1.0-2'}} $
+                <br>
+            </li>
+        </ul>
+
+        <div id="sumDiv">
+            <span id="totalPrice"> Total: {{totalPrice | number:'1.0-2'}}&nbsp;$</span>
+        </div>
+
+    </div>
+
+
+    <div>
+
+        <div>
+            <span>Order</span>
+            <br>
+            <hr>
+            <br>
+        </div>
+
+        <div class="orderDetails">
+            Shipping Details:
+            <hr>
+            <table>
+                <tr>
+                    <td>City</td>
+                    <td><input type="text" [(ngModel)]="shipCity" (change)="resetCityError()"
+                            (dblclick)="getDefaultCity()" placeholder="Double click" autofocus></td>
+                    <td class="errorTd">{{cityError}}</td>
+                </tr>
+                <tr>
+                    <td>Street</td>
+                    <td><input type="text" [(ngModel)]="shipStreet" (change)="resetStreetError()"
+                            (dblclick)="getDefaultStreet()" placeholder="Double click"></td>
+                    <td class="errorTd">{{streetError}}</td>
+                </tr>
+                <tr>
+                    <td>Delivery Date</td>
+                    <td><input type="date" [(ngModel)]="shipDate" (change)="resetDateError()"></td>
+                    <td class="errorTd">{{dateError}}</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="orderDetails">
+            Payments:
+            <hr>
+            <tr>
+                <td>Credit Card</td>
+                <td><input type="number" [(ngModel)]="shipCard" (change)="resetCardError()"></td>
+                <td class="errorTd">{{cardError}}</td>
+            </tr>
+
+
+        </div>
+
+        <button id="orderBtn" (click)="makeOrder()">Order</button>
+
+    </div>
+
+
+</div>
+
+
+<div id="orderMade" *ngIf="orderSuccess">
+    <h4>Ordered Successfully</h4>
+    <h5>To download recipt, <a id="reciptBtn" (click)="downloadRecipt()">click here</a></h5>
+    <!-- [href]="generateFileUrl()" -->
+    <button (click)="BackHome()">OK</button>
+
+</div>

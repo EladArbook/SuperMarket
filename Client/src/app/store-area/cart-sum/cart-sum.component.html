@@ -1,0 +1,69 @@
+<div id="cartSum" *ngIf="!minimized">
+
+    <div>
+        <span>My cart</span>
+        <button (click)="minimizeWindow()" style="font-size:24px" class="minimizeBtn">
+            <i class="fa fa-caret-square-o-left"></i></button>
+        <br>
+        <hr>
+    </div>
+
+    <ul id="cartItems" *ngFor="let product of cartProducts">
+
+        <!-- <div class="imgDiv">
+                <img *ngIf="product.image" src="http://localhost:3800/user/images/{{product.image}}"
+                    alt="{{product.name}}" width="80px" height="80px" />
+
+                <img *ngIf="!product.image" src='../../../assets/supermarket.jpg' alt={{product.name}} height="80px"
+                    width="80px"> {{product.image}} -->
+        <li>{{product.name}}
+            <br>
+            Quantity = {{product.amount}}
+            <br>
+            Total = {{product.total_price | number:'1.0-2'}} $
+            <br>
+
+            <!--   <img *ngIf="product.image" src="http://localhost:3800/user/images/{{product.image}}" alt="{{product.name}}"
+                width="80px" height="80px" />
+
+            <img *ngIf="!product.image" src='../../../assets/supermarket.jpg' alt={{product.name}} height="80px"
+                width="80px"> --><!-- {{product.image}} -->
+
+
+            <div class="imgDiv">
+                <img src="http://localhost:3800/user/imageByProduct/{{product.product_id}}" alt="{{product.name}}"
+                    width="50px" height="50px">
+            </div>
+            <!-- *ngIf="!product.image" -->
+            <!-- <img *ngIf="product.image" src="http://localhost:3800/user/images/{{product.image}}" alt="img" width="50px" height="50px"> -->
+            <i class="fa fa-close closeBtn" (click)="removeProduct(product.product_id)"></i>
+
+        </li>
+    </ul>
+
+    <!-- <ul id="cartItems">
+        
+        <li>Listed Item
+            <br>
+            <img src="../../../assets/supermarket.jpg" alt="img" width="50px" height="50px">
+        </li>
+       
+    </ul> -->
+
+    <div id="sumDiv">
+        <span id="totalPrice"> Total: {{totalPrice | number:'1.0-2'}}&nbsp;$</span>
+        &nbsp;
+        <button *ngIf="totalPrice > 0" (click)="deleteAllProducts()" id="deleteAllBtn">Delete&nbsp;All</button>
+        <button *ngIf="totalPrice >0 " (click)="toOrder()" id="orderBtn"> Order</button>
+
+    </div>
+
+
+
+</div>
+
+<div id="cartSum" *ngIf="minimized">
+    <button (click)="minimizeWindow()" style="font-size:24px" class="minimizeBtn">
+        <i class="fa fa-caret-square-o-right"></i></button>
+    <br>
+</div>

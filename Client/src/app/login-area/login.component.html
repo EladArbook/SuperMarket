@@ -1,0 +1,65 @@
+<div class="authDiv">
+
+    <div>
+
+        <button [disabled]="true" id="toCartBtn" *ngIf="!loggedIn">Start / Resume Shopping</button>
+        <button (click)="toCart()" id="toCartBtn" *ngIf="loggedIn">{{shoppingBtn}}</button>
+        <hr>
+        <div class="bottomArea">
+            <span *ngIf="!loggedIn">
+                Login:
+                <br><br>
+                <input type="email" [(ngModel)]="username" placeholder="Email address" autofocus>
+                <br>
+                <br>
+                <input *ngIf="showPass" type="text" [(ngModel)]="password" placeholder="Password">
+                <input *ngIf="!showPass" type="password" [(ngModel)]="password" placeholder="Password">
+                <br>
+                <span style="font-size: 70%;"> Show password?</span>
+                <input type="checkbox" [(ngModel)]="showPass">
+                <br><br>
+                <span *ngIf="loginError" class="errorSpan">{{loginError}}</span>
+                <br><br>
+                <button (click)="login()" id="loginBtn">Login</button>
+            </span>
+
+            &nbsp;
+            <span *ngIf="!loggedIn">
+                <a routerLink="/register">Sign Up</a>
+            </span>
+            <span *ngIf="loggedIn" id="logOutBtn" (click)="logOut()">
+                Log Out
+            </span>
+        </div>
+    </div>
+
+
+    <div>
+        <h4 style="text-align: center;">Why you should buy here?</h4>
+        <hr>
+        <ul>
+            <li>Fresh groceries!</li>
+            <li>24/6 customer support!</li>
+            <li>Order today - get delivery tomorrow!</li>
+            <li>Prices are low!</li>            
+        </ul>
+        <div id="vegImgDiv">
+            <img src="../../../assets/vegs.jpg" alt="" width="86%">
+        </div>
+
+    </div>
+
+
+    <div>
+        Available products in our store - {{sumOfProducts}}
+        <br><br>
+        Number of orders submitted in our store - {{sumOfOrders}}
+        <hr>
+        <div class="bottomArea" *ngIf="loggedIn">
+            <h3>WELCOME {{userFirst}}!</h3>
+            <h3 *ngIf="cartTotalPrice>=0">You have open cart from {{cartOrderDate}} (total {{cartTotalPrice |
+                number:'1.0-2'}} $)</h3>
+            <h3 *ngIf="cartOrderDate && cartTotalPrice<0">Your last purchase was on {{cartOrderDate}}</h3>
+        </div>
+    </div>
+</div>

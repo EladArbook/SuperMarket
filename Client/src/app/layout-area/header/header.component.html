@@ -1,0 +1,15 @@
+<div id="headOfSite">
+    <h1 (click)="redirectHome()">Luna Pharm</h1><span id="subTitle">Easy supermarket service!</span>
+    <span *ngIf="!userName" id="helloMsg">Hello Guest</span>
+    <span *ngIf="userName" id="helloMsg">Hello {{userName}}!</span>
+
+    <input [ngClass]="{searchDisabled: !searchToggle}" type="text" placeholder="Search products"
+        [(ngModel)]="searchInput" (input)="trigInput()" id="searchInput">
+
+    <button *ngIf="logOutBtn" (click)="adminLogOut()" id="logOutBtn">Log out</button>
+
+    <span id="customerSup">
+        <i class="fa fa-phone"></i>
+        Customer support <br> 1-800-000-000
+    </span>
+</div>

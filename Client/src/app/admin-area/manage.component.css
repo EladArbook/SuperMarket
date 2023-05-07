@@ -1,0 +1,162 @@
+#manageDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    height: 100%;
+}
+
+#firstDiv {
+    grid-column: span 1;
+    min-width: 25px;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* position: relative; */
+}
+
+#secondDiv {
+    /* min-width: 120px; */
+    grid-column: span 2;
+    margin: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*     position: relative; */
+}
+
+#categories {
+    background-color: rgb(164, 225, 159);
+    padding: 2px;
+    padding-top: 0;
+    border: 1px solid rgb(101, 147, 194);
+}
+
+#categories>button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+#categories>button:hover {
+    background-color: rgb(255, 127, 148);
+}
+
+.selectedCategory {
+    font-weight: bold;
+}
+
+.productView {
+    display: inline-block;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.productView:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+hr {
+    border: 1px solid black;
+}
+
+#categorySelect {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#categorySelect>option {
+    background-color: rgb(180, 221, 255);
+    /* font-weight: bold; */
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+#editHeader {
+    position: relative;
+}
+
+#addProductBtn {
+    position: absolute;
+    right: 5px;
+    bottom: 50%;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.fileUpload {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 90%;
+    padding: 2px;
+}
+
+.errorSpn {
+    color: red;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.successSpn {
+    color: blueviolet;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.imgDiv {
+    border: 1px solid black;
+    height: 80px;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#noProducts {
+    background-color: rgba(0, 255, 255, 0.5);
+    padding: 5px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid gray;
+}
+
+.cancelBtn {
+    background-color: rgb(255, 121, 121);
+    border-radius: 5px;
+}
+
+.cancelBtn:hover {
+    background-color: rgb(255, 142, 145);
+}
+
+.cancelBtn:active {
+    background-color: rgb(240, 90, 90);
+}
+
+.approveBtn {
+    background-color: rgb(138, 255, 134);
+    border-radius: 5px;
+}
+
+.approveBtn:hover {
+    background-color: rgb(170, 255, 160);
+}
+
+.approveBtn:active {
+    background-color: rgb(100, 200, 110);
+}

@@ -1,0 +1,83 @@
+<div id="cart">
+
+    <div id="categories">
+        <button [ngClass]="{selectedCategory: category === 1}" (click)="categoryChange(1)">Bakery</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 2}" (click)="categoryChange(2)">Beverages</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 3}" (click)="categoryChange(3)">Dairy</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 4}" (click)="categoryChange(4)">Frozen</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 5}" (click)="categoryChange(5)">Fruits & Vegs</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 6}" (click)="categoryChange(6)">Household</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 7}" (click)="categoryChange(7)">Meat & Fish</button>
+        &nbsp;|&nbsp;
+        <button [ngClass]="{selectedCategory: category === 8}" (click)="categoryChange(8)">Pet</button>
+    </div>
+
+    <div id="productShelf">
+
+        <div *ngIf="productList.length <= 0 && category>0" id="noProducts">No products found in that category.</div>
+        <div *ngIf="productList.length == 0 && category==0" id="noProducts">No products found, try to search another
+            product.</div>
+
+        <div *ngIf="category > 0"><!-- from category links -->
+            <div *ngFor="let product of productList" (click)="addProduct(product.id, product.name, product.price)"
+                class="productView">
+                <span>{{product.name}}</span><!-- id -->
+                <br>
+                <div class="imgDiv">
+                    <img *ngIf="product.image" src="http://localhost:3800/user/images/{{product.image}}"
+                        alt="{{product.name}}" width="80px" height="80px"/>
+
+                    <img *ngIf="!product.image" src='../../../assets/supermarket.jpg' alt={{product.name}} height="80px"
+                        width="80px"><!-- {{product.image}} -->
+                </div>
+                <br>
+                <span>{{product.price | number:'1.0-2'}} $</span>
+                <br>
+            </div>
+        </div>
+
+        <div *ngIf="category==0"><!-- from search input -->
+            <div *ngFor="let product of productList" (click)="addProduct(product.id, product.name, product.price)"
+                class="productView">
+                <span>{{product.name}}</span><!-- id -->
+                <br>
+                <div class="imgDiv">
+                    <img *ngIf="product.image" src="http://localhost:3800/user/images/{{product.image}}"
+                        alt="{{product.name}}" width="80px" height="80px" />
+
+                    <img *ngIf="!product.image" src='../../../assets/supermarket.jpg' alt={{product.name}} height="80px"
+                        width="80px"><!-- {{product.image}} -->
+                </div>
+                <br>
+                <span>{{product.price | number:'1.0-2'}} $</span>
+                <br>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div [ngClass]="{productModal: selectProduct>=0, hideModal: selectProduct<0}">
+            <h4>{{productName}}</h4>
+            <input type="number" [(ngModel)]="productAmount" (change)="fixMaxAmount()">
+            <br>
+            <button (click)="incProductAmount()" class="amountBtn">+</button>
+            <button (click)="decProductAmount()" class="amountBtn">-</button>
+            <br>
+            <button *ngIf="productAmount>0 && productAmount <= 100" (click)="confirmSelection()"
+                class="modalBtn">Confirm</button>
+            &nbsp;
+            <button (click)="cancelSelection()" class="modalBtn">Cancel</button>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>

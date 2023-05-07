@@ -1,0 +1,64 @@
+#headOfSite {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative; 
+    overflow: hidden;
+}
+
+#helloMsg {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+h1 {
+    cursor: pointer;
+    display: inline-block;
+}
+
+#searchInput {
+    max-width: 150px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: rgba(255,255,255,0.5);
+    border: 0;
+    border-radius: 3px;
+}
+
+.searchDisabled{
+    display: none;
+}
+
+#logOutBtn{
+    background-color: transparent;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    border: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+#logOutBtn:hover{
+    color: red;
+}
+
+#customerSup{
+    font-size: 60%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#customerSup:hover{
+    font-weight: bold;
+}
+
+#subTitle{
+    font-size: 15px;
+}

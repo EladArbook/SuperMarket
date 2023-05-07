@@ -1,0 +1,82 @@
+#authDiv {
+    height: 100%;
+    width: 50%;
+    min-width: 300px;
+    margin: auto;
+    overflow: hidden;
+    font-size: 90%;
+
+}
+
+#authDiv>div {
+    height: 90%;
+    box-sizing: border-box;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(130, 170, 255);
+    border: 1px solid gray;
+    overflow: auto;
+    position: relative;
+}
+
+#authDiv>div>* {
+    overflow: hidden;
+}
+
+.cancelBtn {
+    color: rgb(81, 81, 218);
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.btnArea {
+    text-align: center;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.errorSpan {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px;
+}
+
+#citySelect {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#citySelect>option {
+    background-color: rgb(180, 221, 255);
+    /* font-weight: bold; */
+}
+
+#idInput::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    /*   margin: 0; */
+}
+
+
+
+/* #citySelect>option:hover {
+    background-color: white;
+    color: blue;
+} */

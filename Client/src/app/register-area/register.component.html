@@ -1,0 +1,102 @@
+<div id="authDiv">
+    <div *ngIf="formStage === 0">
+        <h2>New Customer</h2>
+        <br>
+
+        ID Number:
+        <br>
+        <input type="number" [(ngModel)]="userId" (change)="resetErrors()" id="idInput" autofocus>
+        <br><br>
+
+        Email Adress:
+        <br>
+        <input type="email" [(ngModel)]="userEmail" (change)="resetErrors()">
+        <br><br>
+
+        Password:
+        <br>
+        <input *ngIf="!showPass" type="password" [(ngModel)]="userPass" (change)="resetErrors()">
+        <input *ngIf="showPass" type="text" [(ngModel)]="userPass" (change)="resetErrors()">
+
+        <br><br>
+
+        Password Confirm:
+        <br>
+        <input *ngIf="!showPass" type="password" [(ngModel)]="userPassConfirm" (change)="resetErrors()">
+        <input *ngIf="showPass" type="text" [(ngModel)]="userPassConfirm" (change)="resetErrors()">
+        <br>
+        Show Pass:
+        <input type="checkbox" [(ngModel)]="showPass">
+        <br><br>
+
+        <span *ngIf="firstError" class="errorSpan">{{firstError}}</span>
+        <br>
+
+        <div class="btnArea">
+            <button (click)="nextForm()">Next</button>
+
+            <br>
+            1/2
+        </div>
+
+
+
+    </div>
+
+
+    <div *ngIf="formStage === 1">
+        <h2>New Customer</h2>
+        <br>
+
+        First Name:
+        <br>
+        <input type="text" [(ngModel)]="userFirst" (change)="resetErrors()">
+        <br><br>
+
+        Last Name::
+        <br>
+        <input type="text" [(ngModel)]="userLast" (change)="resetErrors()">
+        <br><br>
+
+        City:
+        <br>
+        <select [(ngModel)]="userCity" (change)="resetErrors()" id="citySelect">
+            <option value="">Select</option>
+            <option value="Jerusalem">Jerusalem</option>
+            <option value="Tel Aviv">Tel Aviv</option>
+            <option value="Haifa">Haifa</option>
+            <option value="Petah Tikva">Petah Tikva</option>
+            <option value="Ashdod">Ashdod</option>
+            <option value="Netanya">Netanya</option>
+            <option value="Rishon LeZiyyon">Rishon LeZiyyon</option>
+            <option value="Bnei Brak">Bnei Brak</option>
+            <option value="Holon">Holon</option>
+            <option value="Beersheba">Beersheba</option>
+        </select>
+
+        <!--Ramat Gan
+            Ashqelon -->
+        <!-- <input type="text" [(ngModel)]="userCity" (change)="resetErrors()"> -->
+        <br><br>
+
+        Street:
+        <br>
+        <input type="text" [(ngModel)]="userStreet" (change)="resetErrors()">
+        <br><br><br>
+
+        <span *ngIf="secondError" class="errorSpan">{{secondError}}</span>
+        <br>
+
+        <div class="btnArea">
+            <button (click)="prevForm()">Back</button>
+            &nbsp;
+            <button (click)="finishForm()">Sign up</button>
+            <br>
+            2/2
+        </div>
+    </div>
+
+    <span class="cancelBtn"> <a routerLink="/home">Cancel</a></span>
+
+
+</div>

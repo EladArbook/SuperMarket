@@ -1,0 +1,12 @@
+<div id="shopDiv">
+
+    <div id="firstDiv" [ngClass]="{firstMinimized: minimized, firstExtended: !minimized}">
+        <app-cart-sum [refreshCart]="refresher" (minimizing)="minimizeMenu($event)"></app-cart-sum>
+    </div>
+    <!-- (errorsHandler)="handleErrors($event)" -->
+    <div id="secondDiv" [ngClass]="{secondMinimized: !minimized, secondExtended: minimized}">
+        <app-shelf (refreshCart)="refreshCartSum($event)"></app-shelf>
+
+    </div>
+
+</div>
